@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- ------------------- font awesome link ------------------- -->
+    <script src="https://kit.fontawesome.com/911178bb44.js" crossorigin="anonymous"></script>
+    <!-- ------------------- tailowind css ------------------- -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- ------------------- daisy ui ------------------- -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.6.0/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <!-- ------------------- font family ------------------- -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+    <!-- ------------------- custom tailowind css ------------------- -->
+    <script>
+        tailwind.config = {
+          theme: {
+            extend: {
+              colors: {
+                clifford: '#da373d',
+              },
+            }
+          }
+        }
+      </script>
+      <!-- ------------------- website title is here ------------------- -->
+    <title>Re-Tro</title>
+    <!-- ------------------- custom css ------------------- -->
+    <style>
+        *{
+            font-family: "Mulish", sans-serif;
+            transition: .5s;
+        }
+        .navPosition{
+            top: -100px;
+            left: 50%;
+            transform: translate(0%, 0);
+        }
+        .bannerBGM{
+            background: url(images/bgbanner.png);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: -10px 30px;
+        }
+        #submit:active{
+            transform: scale(0.9);
+        }
+        .navActive{
+            top: 60px !important;
+            z-index: 20;
+        }
+        .boxHover{
+            border: 1px solid rgba(182, 181, 181, 0);
+        }
+        .boxHover:hover{
+            border: 1px solid rgb(182, 181, 181);
+        }
+        @media only screen and (max-width:640px){
+            .navPosition{
+            transform: translate(-50%, 0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="w-full mb-4">
+        <!-- ------------------- nav bar start from here ------------------- -->
+        <nav class="container mx-auto">
+            <div class="navbar">
+                <div class="navbar-start">
+                  <div class="dropdown">
+                    <div tabindex="0" role="button" id="navCall" class="btn btn-ghost sm:hidden">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
+                    </div>
+                  </div>
+                  <a class=""><img src="images/logo.png" alt=""></a>
+                </div>
+                <div class="navbar-end float-left gap-4 justify-end items-center">
+                   <div id="navItems" class=" flex gap-4 justify-center p-2 bg-white rounded-full navPosition shadow-md sm:shadow-none sm:static absolute">
+                    <div class="tooltip hover:bg-green-100 cursor-pointer tooltip-bottom w-10 h-10 flex justify-center items-center rounded-full" data-tip="Home" style="border:1px solid gray"><i class="fa-solid text-xl fa-house"></i></div>
+                    <div class="tooltip hover:bg-green-100 cursor-pointer tooltip-bottom w-10 h-10 flex justify-center items-center rounded-full" data-tip="Pen" style="border:1px solid gray"><i class="fa-solid fa-pen-clip"></i></div>
+                    <div class="tooltip hover:bg-green-100 cursor-pointer tooltip-bottom w-10 h-10 flex justify-center items-center rounded-full" data-tip="Add" style="border:1px solid gray"><i class="fa-solid fa-user-plus"></i></div>
+                    <div class="tooltip hover:bg-green-100 cursor-pointer tooltip-bottom w-10 h-10 flex justify-center items-center rounded-full" data-tip="Flag" style="border:1px solid gray"><i class="fa-regular fa-flag"></i></div>
+                   </div>
+                  <a class="ml-3 btn font-bold text-md px-7 bg-indigo-600 rounded-full border1 text-white cursor-pointer hover:text-black">Sign In</a>
+                </div>
+              </div>
+        </nav>
+
+        <!-- ------------------- header start from here ------------------- -->
+        <div class="container mx-auto bannerBGM rounded-xl h-auto md:h-[550px] bg-blue-950 flex justify-center items-center py-5 px-3 lg:py-10 lg:px-20">
+            <div class="w-full grid grid-cols-1 md:grid-cols-3 gap-3 justify-center items-center">
+                <div class="col-span-1 md:col-span-2 w-full p-2 h-full ">
+                    <h1 class="text-3xl md:text-5xl lg:text-7xl text-center sm:text-left font-extrabold my-4 text-white">Welcome to the <br>
+                        <span class="text-blue-500">ReTro</span> Forum</h1>
+                    <p class="text-xl my-8 text-white text-center sm:text-left">Share your favorite opinion and win and wp <br>
+                        forum coffee mug!</p>
+                    <form class="w-full my-4 lg:w-[550px] relative">
+                        <input type="text" id="searchValue" placeholder="Search here anything" class="w-full p-4 text-xl rounded-full bg-white">
+                        <input type="submit" id="submit" value="Search" class="text-xl cursor-pointer hover:bg-indigo-400 clickbtn p-3 px-5 text-white rounded-full absolute top-1 right-1 bg-indigo-600">
+                    </form>
+                </div>
+                <div class="w-full bg-white rounded-2xl p-10">
+                    <p class="text-xl flex justify-between p-5"><span>Registered Users </span> <span> 01</span></p>
+                    <p class="text-xl flex justify-between p-5"><span>Forum </span> <span> 05</span></p>
+                    <p class="text-xl flex justify-between p-5"><span>Topics </span> <span> 01</span></p>
+                    <p class="text-xl flex justify-between p-5"><span>Replies </span> <span> 01</span></p>
+                </div>
+            </div>
+        </div>
+
+        <div id="mainloader" class="min-w-full z-10 bg-white fixed top-0 left-0">
+            <div class="w-full min-h-screen flex justify-center flex-col items-center">
+                <span class="loading loading-ring loading-lg w-44 h-44"></span>
+                <strong class="font-bold mb-3">Page is loading ...</strong>
+                <progress class="progress w-56"></progress>
+            </div>
+        </div>
+    </header>
+
+    
+
+    <!-- -------------------------------------- main start from here -------------------------------------- -->
+    <main class="container mx-auto">
+        <!-- ------------------- first section start from here ------------------- -->
+        <section class="w-full py-20 px-2">
+            <h1 class="text-3xl md:text-5xl text-center font-extrabold"><span class="text-3xl md:text-5xl  text-indigo-600 text-3xl">Let’s</span> Discuss</h1>
+            <p class="text-center text-xl w-full lg:w-2/3 mx-auto my-5">Yes, you can run unit tests and view the results directly within the app. The
+                integrated testing features allow for a streamlined .</p>
+
+            <!-- ------------------- section div start from here ------------------- -->
+            <div class="w-full pt-10 grid grid-cols-1 md:grid-cols-3 gap-3">
+               <div id="postLoader" class="w-full col-span-1 md:col-span-2 hidden">
+                <div class="w-full flex justify-center items-center h-44">
+                    <span class="loading loading-ring loading-lg w-44 h-44"></span>
+                </div>
+               </div>
+                <div id="postItems" class="col-span-1 md:col-span-2 flex flex-col gap-3"></div>
+
+                <div class="">
+                    <div class="w-full bg-gray-100 p-5 rounded-xl">
+                        <div class="flex justify-between">
+                            <p class="font-bold text-xl">Title</p>
+                            <span><i class="fa-regular text-green-500 fa-circle-check"></i> Mark as read (<span id="readNumber">0</span>)</span>
+                        </div>
+                        <div id="readBox" class="w-full"></div>
+                    </div>
+                </div>
+            </div>
+    
+        </section>
+
+        <!-- -------------------------------------- secend section start from here -------------------------------------- -->
+        <section class="w-full py-20 px-2">
+            <div class="hero p-2 py-5 sm:p-10 bg-blue-950 rounded-2xl">
+                <div class="hero-content flex-col md:flex-row-reverse">
+                  <img src="images/joinforum.png" class="w-full md:w-1/3" />
+                  <div>
+                    <h1 class="text-5xl font-extrabold text-white">Join Our Forum</h1>
+                    <p class="py-6 text-white">Share your favorite opinion and win and wp forum coffee mug! Yes, you can
+                        run unit tests and view the results directly within the app. </p>
+                    <button class="btn bg-indigo-600 hover:text-black rounded-full text-white px-10">Registered Now</button>
+                  </div>
+                </div>
+              </div>
+        </section>
+
+        <!-- -------------------------------------- third section start from here -------------------------------------- -->
+        <section class="w-full py-20 px-2">
+            <h1 class="text-3xl md:text-5xl text-center font-extrabold">Latest <span class="text-3xl md:text-5xl  text-indigo-600 text-3xl"> Posts</span></h1>
+            <p class="text-center text-xl w-full lg:w-2/3 mx-auto my-5">Yes, you can run unit tests and view the results directly within the app. The
+                integrated testing features allow for a streamlined .</p>
+
+                <!-- ------------------- section card style srart from here ------------------- -->
+            <div id="latestPost" class="w-full flex flex-wrap justify-center items-center gap-5"></div>
+        </section>
+    </main>
+
+    <!-- -------------------------------------- footer start from here -------------------------------------- -->
+
+    <footer class="footer footer-center pt-20 p-10 bg-base-300 text-base-content">
+        <img src="images/logo.png" alt="" class="mx-auto">
+        
+          <p class="text-md">Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a
+            piece of classical Latin literature from 45 BC
+            </p>
+          <div class="flex gap-4">
+            <a href="#" class="text-4xl"><i class="fa-brands fa-twitter"></i></a>
+            <a href="#" class="text-4xl"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" class="text-4xl"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" class="text-4xl"><i class="fa-brands fa-github"></i></a>
+            
+          </div>
+        <div class="w-full py-12" style="border-top: 1px solid gray;">
+            <p>2017, All Rights Reserved</p>
+        </div>
+      </footer>
+
+    <!-- -------------------------------------- this is js file link -------------------------------------- -->
+    <script src="index.js"></script>
+</body>
+</html>
